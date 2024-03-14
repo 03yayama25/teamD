@@ -12,16 +12,6 @@ String name = request.getParameter("name");
 <title>登録完了</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <style>
-.bg_pattern {
-  position: fixed;
-  
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #b5caa0;
-  opacity: 0.4;
-  z-index: -1;
-}
 .completion {
   background-color: rgb(255, 255, 255);
   padding: 60px;
