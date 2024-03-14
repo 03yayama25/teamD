@@ -13,19 +13,14 @@
 	  <div class="bg_pattern Lines_v2"></div>
        <!-- ログインフォーム -->
        <form action="Login" method="post">
-               <h3>服薬管理アプリ</h3><br>
-           <div class="span">おなまえ    <input type="text" name="name"></span><br>
+           <h3>服薬管理アプリ</h3><br>
+           <div class="span">おなまえ    <input type="text" name="name"></div><br>
            <div class="span">パスワード  <input type="password" name="pass"></span><br>
            <input type="submit" value="ログイン"><br>
 
            <!-- 新規登録へのリンク -->
-        <a href="Register.jsp">初めて利用する方はこちら</a>
-        
-        <!-- エラーメッセージを表示 -->
-	<% String errorMessage = (String) request.getAttribute("errorMessage"); %>
-	<% if (errorMessage != null) { %>
-    	<div class="error-message"><%= errorMessage %></div>
-	<% } %>
+        <a href="Register.jsp"><div class="text">初めて利用する方はこちら</a></div>
+       
         </form>
   </body>
   </html>
