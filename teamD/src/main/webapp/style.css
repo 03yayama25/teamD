@@ -72,8 +72,7 @@ form input[type="text"], form input[type="password"] {
     margin: 10px 0;
     border: 2px solid #0B1013;
     border-radius: 5px;
-    position: relative;
-    top: 30px;
+   
 }
 
 
@@ -87,8 +86,7 @@ form input[type="submit"] {
     color: rgb(255, 255, 255);
     text-align: center;
     margin: auto;
-    position: relative;
-    top: 30px;
+   
     
 }
 
