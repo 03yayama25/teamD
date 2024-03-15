@@ -19,7 +19,7 @@
            <input type="submit" value="ログイン"><br>
 
            <!-- 新規登録へのリンク -->
-        <a href="Register.jsp"><div class="text">初めて利用する方はこちら</a></div>
+        <a href="register.jsp"><div class="text">初めて利用する方はこちら</a></div>
        
         </form>
   </body>
