@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>新規登録</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="./css/style.css">
 <script>
 	function CheckPassword(pass_confirmation){
 		// 入力値取得
@@ -24,7 +24,7 @@
 <div class="bg_pattern Crown Lines_v2"></div>
 
 <form action="register-success.jsp" method="post">
-<h3>新規登録</h3>
+<h1>新規登録</h1>
 <p>お名前</p>
 <input type="text" name="name" required>
 <p>パスワード</p>

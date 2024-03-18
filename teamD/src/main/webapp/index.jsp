@@ -3,23 +3,26 @@
   <!DOCTYPE html>
   <html>
   <head>
-      <meta charset="UTF-8">
       <title>服薬管理</title>
-      <link rel="stylesheet" type="text/css" href="style.css">
-  
+	<link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-            <!-- 背景 -->	
+      <!-- 背景 -->	
 	  <div class="bg_pattern Lines_v2"></div>
        <!-- ログインフォーム -->
-       <form action="Login" method="post">
-           <h3>服薬管理アプリ</h3><br>
-           <div class="span">おなまえ    <input type="text" name="name"></div><br>
-           <div class="span">パスワード  <input type="password" name="pass"></span><br>
+       <form action="LoginServlet" method="post">
+           <h1>服薬管理アプリ</h1><br>
+           <div>おなまえ    <input type="text" name="name"></div><br>
+           <div>パスワード  <input type="password" name="pass"></div><br>
            <input type="submit" value="ログイン"><br>
+           
+           <%-- エラーメッセージがある場合に表示する --%>
+			<% if (request.getAttribute("errorMessage") != null) { %>
+			<div class="error-message"><%= request.getAttribute("errorMessage") %></div>
+			<% } %>
 
-           <!-- 新規登録へのリンク -->
-        <a href="register.jsp"><div class="text">初めて利用する方はこちら</a></div>
+        	<!-- 新規登録へのリンク -->
+        	<div class="text"><a href="register.jsp">初めて利用する方はこちら</a></div>
        
         </form>
   </body>

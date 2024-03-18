@@ -10,19 +10,8 @@ String name = request.getParameter("name");
 <head>
 <meta charset="UTF-8">
 <title>登録完了</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="./style.css">
 <style>
-.completion {
-  background-color: rgb(255, 255, 255);
-  padding: 60px;
-  border-radius: 8px;
-  box-shadow:  0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
-  max-width: 400px;
-  height:400px;
-  display: grid;
-  place-items: center;
-}
 
 </style>
 </head>
