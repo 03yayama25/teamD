@@ -2,8 +2,6 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import dao.LoginDAO;
@@ -13,7 +11,49 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import utils.DBUtil;
 
+@WebServlet("/Login")
+public class LoginServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        // リクエストパラメーターの取得
+        String usernameInput = request.getParameter("name");
+        String passwordInput = request.getParameter("pass");
+
+        try (Connection conn = DBUtil.getConnection()) {
+            // LoginDAOインスタンス作成
+            LoginDAO loginDAO = new LoginDAO();
+
+            // ログインをチェック
+            boolean success = loginDAO.checkLogin(usernameInput, passwordInput);
+
+            if (success) {
+                // ログイン成功時の処理
+                // ユーザー名をセッションに保存
+                request.getSession().setAttribute("name", usernameInput);
+                // メインページにリダイレクト
+                response.sendRedirect("main.jsp");// ログイン成功時に main.jsp にリダイレクト(実装前はこっち)
+                // MedicineTimingServletにリダイレクトする(いろいろ実装したらここ変更！！)
+                //response.sendRedirect(request.getContextPath() + "/MedicineTiming");
+            } else {
+                // ログイン失敗時の処理
+                request.setAttribute("errorMessage", "名前またはパスワードが正しくありません。");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+                dispatcher.forward(request, response);
+            }
+        } catch (SQLException e) {
+            // エラーが発生した場合の処理
+            e.printStackTrace();
+            response.sendRedirect("error.jsp"); // エラーページにリダイレクト
+        }
+    }
+}
+
+/* 
 @WebServlet("/Login")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -44,7 +84,10 @@ public class LoginServlet extends HttpServlet {
                         // ログイン成功時の処理
                     	// ユーザー名をセッションに保存
                         request.getSession().setAttribute("name", usernameInput);
-                        response.sendRedirect("main.jsp"); // ログイン成功時に main.jsp にリダイレクト
+                     // MedicineTimingServletにリダイレクトする(いろいろ実装したらここ変更！！)
+                        //response.sendRedirect(request.getContextPath() + "/MedicineTiming");
+                        
+                        response.sendRedirect("main.jsp"); // ログイン成功時に main.jsp にリダイレクト(実装前はこっち)
                     } else {
                         // ログイン失敗時の処理
                         request.setAttribute("errorMessage", "名前またはパスワードが正しくありません。");
@@ -60,3 +103,4 @@ public class LoginServlet extends HttpServlet {
         	}
     	}
 	}
+	*/
