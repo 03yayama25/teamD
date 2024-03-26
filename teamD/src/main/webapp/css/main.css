@@ -16,7 +16,6 @@ html, body {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	overflow: hidden; /* スクロール */
 }
 
 body {
@@ -47,6 +46,10 @@ h2, p {
 .Lines_v2 {
   background-image: linear-gradient(to right, #92a5f0, #92a5f0 10px,#ffffff 10px, #ffffff );
   background-size: 20px 100%;
+}
+
+#randomImage {
+	display: none; /* 初期状態で非表示にする */
 }
 
 /*２段組み*/
