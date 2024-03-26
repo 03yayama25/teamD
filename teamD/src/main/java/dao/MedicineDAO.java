@@ -10,21 +10,21 @@ public class MedicineDAO {
     private final String DB_USER = "root";
     private final String DB_PASS = "adminadmin";
 
-    public boolean registerAccount(String name, String pass) {
+    public boolean registerMedicine(String name, String type) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");	
             try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS)){
-//                String sql = "INSERT INTO accounts (name, pass) VALUES (?, ?)";
-//                try (PreparedStatement statement = conn.prepareStatement(sql)) {
-//                    statement.setString(1, name);
-//                    statement.setString(2, pass);
-//                    int rowsInserted = statement.executeUpdate();
-//                    return rowsInserted > 0;
-//                }
-//            }
-//        } catch (ClassNotFoundException | SQLException e) {
-//            e.printStackTrace(); // エラーハンドリング
-//            return false;
-//        }
+                String sql = "INSERT INTO medicines (name, type) VALUES (?, ?)";
+                try (PreparedStatement statement = conn.prepareStatement(sql)) {
+                    statement.setString(1, name);
+                    statement.setString(2, type);
+                    int rowsInserted = statement.executeUpdate();
+                    return rowsInserted > 0;
+               }
+           }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace(); // エラーハンドリング
+            return false;
+        }
     }
 }
