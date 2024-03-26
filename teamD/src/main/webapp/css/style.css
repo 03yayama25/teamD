@@ -13,36 +13,39 @@ body {
 
 /* 背景 */
 .bg_pattern {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #b5caa0;
-  opacity: 0.4;
-  z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #b5caa0;
+	opacity: 0.4;
+	z-index: -1;
 }
 
  .Lines_v2 {
-  background-image: linear-gradient(to right, #92a5f0, #92a5f0 10px,#ffffff 10px, #ffffff );
-  background-size: 20px 100%;
+	background-image: linear-gradient(to right, #92a5f0, #92a5f0 10px,#ffffff 10px, #ffffff );
+	background-size: 20px 100%;
 }
 
 h1 {
-    text-align: center;
-    font-size: 30px;
-    border: solid 1px rgb(0, 0, 0);
-    background-color: rgb(0, 0, 255);
-    color: rgb(255, 255, 255);
+	background: #b0dcfa; /*背景色*/
+	padding: 0.5em;/*文字周りの余白*/
+	color: white;/*文字を白に*/
+	border-radius: 0.5em;/*角の丸み*/
 }
 
-h4 {
-    text-align: center;	
-    padding: 50px 0 0 0;
+h2 {
+	font-size: 20px;
+	color: #505050;/*文字色*/
+	background: linear-gradient(transparent 70%, #dbebf8 70%);
 }
+
+
+
 
 form {
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
     padding: 60px;
     height: fit-content;
     border-radius: 15px;
@@ -67,7 +70,7 @@ form input[type="text"], form input[type="password"] {
 }
 
 form input[type="submit"] {
-    background-color: rgb(0, 0, 255);
+	background: #b0dcfa; /*背景色*/
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
@@ -79,7 +82,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-    background: rgb(0, 0, 255) ;
+	background: #b0dcfa; /*背景色 へんかさせる！！！！*/
   	color: rgb(255, 255, 255);
   	transform: scale(1.1);
 }
@@ -126,7 +129,7 @@ hr {
 	h1{
 		font-size: 7vw;
 	}
-	h4{
+	h2{
 		font-size: 2.5vw;
 	}
 	

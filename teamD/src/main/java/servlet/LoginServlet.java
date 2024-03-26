@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/")
+@WebServlet("/Login")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -35,25 +35,26 @@ public class LoginServlet extends HttpServlet {
                 statement.setString(2, passwordInput);
 
                 // クエリを実行して結果を取得
+                boolean success;
                 try (ResultSet resultSet = statement.executeQuery()) {
-                    if (resultSet.next()) {
+                		success = resultSet.next(); //結果が存在するかどうかを取得
+                }
+                
+                    if (success) {
                         // ログイン成功時の処理
                         response.sendRedirect("main.jsp"); // ログイン成功時に main.jsp にリダイレクト
-                        return; // リダイレクト後に処理を終了
                     } else {
                         // ログイン失敗時の処理
                         request.setAttribute("errorMessage", "名前またはパスワードが正しくありません。");
                         RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
                         dispatcher.forward(request, response);
                         // ログイン失敗時に index.jsp にフォワードし、エラーメッセージをリクエストスコープにセット
-                        return; // フォワード後に処理を終了
                     }
                 }
-            }
-        } catch (SQLException e) {
+        	} catch (SQLException e) {
             // エラーが発生した場合の処理
-            e.printStackTrace();
-            response.sendRedirect("error.jsp"); // エラーページにリダイレクト
-        }
-    }
-}
+        		e.printStackTrace();
+        		response.sendRedirect("error.jsp"); // エラーページにリダイレクト
+        	}
+    	}
+	}
