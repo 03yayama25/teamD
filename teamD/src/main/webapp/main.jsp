@@ -8,8 +8,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="js/randomImage.js"></script>
 <title>服薬管理アプリ</title>
-ログイン成功ページ<br>
-<a href="medicine-register.jsp">服薬登録</a>
 </head>
+<body>
+
+	ログイン成功ページ<br>
+	<a href="medicine-register.jsp">服薬登録</a>
+</body>
 </html>
