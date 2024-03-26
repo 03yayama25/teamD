@@ -1,12 +1,19 @@
-// ランダムで画像パスを取得して表示するJavaScript
+// randomImage.js
+
 function displayRandomImage() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             if (xhr.status == 200) {
                 var imagePath = xhr.responseText;
-                var imageElement = document.getElementById("randomImage");
-                imageElement.src = "http://localhost:8080/teamD" + imagePath; // 画像のURLを正しく構築
+                var imageUrl = "http://localhost:8080/teamD" + imagePath;
+                var randomImage = document.getElementById("randomImage");
+                randomImage.src = imageUrl; // 画像のURLを設定
+                randomImage.onload = function() {
+                    resizeImage(); // 画像をリサイズ
+                    centerImage(); // 画像を中央寄せ
+                    randomImage.style.display = 'block'; // 画像を表示
+                };
             } else {
                 console.error('Failed to fetch random image path');
             }
@@ -14,4 +21,15 @@ function displayRandomImage() {
     };
     xhr.open("GET", "http://localhost:8080/teamD/getRandomImagePath", true);
     xhr.send();
+}
+
+function resizeImage() {
+    var randomImage = document.getElementById("randomImage");
+    randomImage.style.width = '300px';
+}
+
+function centerImage() {
+    var randomImage = document.getElementById("randomImage");
+    randomImage.style.marginLeft = "auto";
+    randomImage.style.marginRight = "auto";
 }

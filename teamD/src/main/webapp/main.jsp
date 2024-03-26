@@ -10,6 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="js/randomImage.js"></script>
 <script src="js/resizeImages.js"></script>
+<script src="js/popupImage.js"></script>
 <title>服薬管理アプリ</title>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/main.css">
 </head>
@@ -18,33 +19,56 @@
 <div class="bg_pattern Lines_v2"></div>
 
 <div class="main"></div>
-	<h1>ようこそ、 <%= session.getAttribute("name") %>！<br></h1>
+    <h1>ようこそ、 <%= session.getAttribute("name") %>さん！</h1>
+    <a href="medicine-register.jsp">服薬登録</a><br>
+    
+    	<img id="randomImage" src="" alt="Random Image">
+
+    
+    <h2>朝</h2>
+    <ul>
+        <c:forEach var="medicine" items="${morningMedicines}">
+            <li>${medicine.name}</li>
+        </c:forEach>
+    </ul>
+    
+	<button onclick="displayRandomImage()" id="achievedButton" class="button">服用</button>
 	
-	<a href="medicine-register.jsp">服薬登録</a>
 	
-	<div class="btn-container">	
-	<h2>今日</h2>
-	<ul>
-	 <li>ロキソニン <button onclick="displayRandomImage()">済</button></li>
-	</ul>
+
+    <h2>昼</h2>
+    <ul>
+        <c:forEach var="medicine" items="${afternoonMedicines}">
+            <li>${medicine.name}</li>
+        </c:forEach>
+    </ul>
+    
+	<button onclick="displayRandomImage()" id="achievedButton" class="button">服用</button>
 	
 	
-	<button id="achievedButton" class="button">服用</button>
-	</div>
-	<!-- ボタンテストここまで -->
-	<div class="image-container">
-	<img id="randomImage" src="" alt="Random Image">
-	</div>
-	
-</div>
+
+    <h2>夕</h2>
+    <ul>
+        <c:forEach var="medicine" items="${eveningMedicines}">
+            <li>${medicine.name}</li>
+        </c:forEach>
+    </ul>
+    
+	<button onclick="" id="achievedButton" class="button">服用</button>
 
 	
+    <h2>とん服</h2>
+	<ul>
+        <c:forEach var="medicine" items="${eveningMedicines}">
+            <li>${medicine.name}</li>
+        </c:forEach>
+    </ul>
+    
+	<button onclick="displayRandomImage()" id="achievedButton" class="button">服用</button>
 	
-				<!-- その日の服用を確認する -->
-			
-				
-			
-			<p id="btntext" class="hidden">うまくやっています。最高です</p>
-			 <script src="btn.js"></script>
+	<br>
+	<a href="index.jsp">もどる</a>
+
+	
 </body>
 </html>
