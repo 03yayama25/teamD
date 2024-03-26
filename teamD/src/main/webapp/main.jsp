@@ -18,7 +18,7 @@
 <!-- 背景 -->
 <div class="bg_pattern Lines_v2"></div>
 
-<div class="main"></div>
+<div class="contents">
     <h1>ようこそ、 <%= session.getAttribute("name") %>さん！</h1>
     <a href="medicine-register.jsp">服薬登録</a><br>
     
@@ -68,6 +68,8 @@
 	
 	<br>
 	<a href="index.jsp">もどる</a>
+	
+	</div>
 
 	
 </body>

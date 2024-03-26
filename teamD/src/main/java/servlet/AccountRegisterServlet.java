@@ -25,8 +25,18 @@ public class AccountRegisterServlet extends HttpServlet {
 		    System.out.println("Received name: " + usernameInput);
 		    System.out.println("Received pass: " + passwordInput);
 		
-			// AccountDAOを使用してデータベースに新しいアカウントを登録
+		    
+		    //名前の重複チェック
 			AccountDAO accountDAO = new AccountDAO();
+			if (accountDAO.isUsernameExists(usernameInput)) {
+	            // 名前が重複している場合はエラーメッセージを表示して登録を中止
+	            request.setAttribute("errorMessage", "既に存在する名前です。別の名前を使用してください。");
+	            RequestDispatcher dispatcher = request.getRequestDispatcher("register.jsp");
+	            dispatcher.forward(request, response);
+	            return;
+	        }
+			
+			// AccountDAOを使用してデータベースに新しいアカウントを登録
 			boolean success = accountDAO.registerAccount(usernameInput, passwordInput);
 
 		    // ログ出力
