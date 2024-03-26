@@ -42,6 +42,8 @@ public class LoginServlet extends HttpServlet {
                 
                     if (success) {
                         // ログイン成功時の処理
+                    	// ユーザー名をセッションに保存
+                        request.getSession().setAttribute("name", usernameInput);
                         response.sendRedirect("main.jsp"); // ログイン成功時に main.jsp にリダイレクト
                     } else {
                         // ログイン失敗時の処理

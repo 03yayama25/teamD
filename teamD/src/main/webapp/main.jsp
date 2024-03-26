@@ -14,6 +14,8 @@
 <body>
 
 	ログイン成功ページ<br>
+	ようこそ、 <%= session.getAttribute("name") %>！<br>
+	
 	<a href="medicine-register.jsp">服薬登録</a>
 </body>
 </html>
