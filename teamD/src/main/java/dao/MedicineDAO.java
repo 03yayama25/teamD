@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -56,7 +57,7 @@ public class MedicineDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return morningMedicines;
+        return morningMedicines;}
 
     // 昼の服薬情報を取得するメソッド
     public static List<Medicine> getNoonMedicines(int userId) {
@@ -125,3 +126,4 @@ public class MedicineDAO {
     }
 
 }
+    
