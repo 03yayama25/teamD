@@ -9,23 +9,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="js/randomImage.js"></script>
+<script src="js/calenderImage.js"></script>
 <script src="js/btn.js"></script>
 <title>服薬管理アプリ</title>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/main.css">
 </head>
 <body>
 <!-- 背景 -->
-<div class="bg_pattern Lines_v2"></div>
+ <div class="bg_pattern Lines_v2"></div>
+
 
 <div class="contents">
     <h1>ようこそ、 <%= session.getAttribute("name") %>さん！</h1>
     <a href="medicine-register.jsp">服薬登録</a><br>
     
     	<img id="randomImage" src="" alt="Random Image">
+
+ 	<div class="split">
+    <div class="split-item left">
+        <div class="left__inner">
+
     	<!-- <div id="btntext">うまくやっています。最高です</div> -->
     	<!-- 上記調整必要あり -->
 
-    
     <h2>朝</h2>
     <table border="1">
         <thead>
@@ -85,9 +91,28 @@
 	
 	<br>
 	<a href="index.jsp">もどる</a>
+	    </div><!--left__inner-->
+    </div><!--split-item left-->
+	
+	<div class="split-item right">
+        <div class="right__inner">
+	<div class="wrapper">
+    <!-- xxxx年xx月を表示 -->
+    <h1 id="header"></h1>
+
+    <!-- ボタンクリックで月移動 -->
+    <div id="next-prev-button">
+        <button id="prev" onclick="prev()">‹</button>
+        <button id="next" onclick="next()">›</button>
+    </div>
 	
 	</div>
 
+    <div id="calendar"></div>
+    </div>
+	</div><!--right__inner-->
+    </div><!--split-item right-->
+</div><!--split-->
 	
 </body>
 </html>

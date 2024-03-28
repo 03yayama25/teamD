@@ -155,5 +155,95 @@ button:hover {
     pointer-events: none;
   }
 }
+
+
+
+/* 要素を横に並べる*/
+.split{
+    display: table;
+    width: 100%;    
+}
+.split-item{
+    display: table-cell;
+    padding: 80px;
+    width: 50%;
+}
+.left{
+    position: relative;
+}
+.left__inner{
+    height: 100%;
+    position: fixed;
+    width: 40%;
+}
+.right__inner{
+    height: 380px;
+}
+
+
+
+/*カレンダー*/
+#calendar {
+    text-align: center;
+    width: 100%;
+     background-color: white;
+}
+table {
+    outline: 2px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    color: #000;
+}
+th, td {
+    outline: 1px solid #ddd;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+/*日曜日*/
+td:first-child {
+    color: red;
+}
+/*土曜日*/
+td:last-child {
+    color: blue;
+}
+/*前後月の日付*/
+td.disabled {
+    color: #ccc;
+}
+/*本日*/
+td.today {
+    background-color: #D65E72;
+    color: #fff;
+}
+
+/*ボタン*/
+#next-prev-button {
+    position: relative;
+}
+#next-prev-button button{
+    cursor: pointer;
+    background: #B78D4A;
+    color: #fff;
+    border: 1px solid #B78D4A;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    margin: 1rem 0;
+}
+#next-prev-button button:hover{
+    background-color: #D4BB92;
+    border-color: #D4BB92;
+}
+#prev {
+    float: left;
+}
+#next {
+    float: right;
+}
+
 		
 	
