@@ -13,4 +13,6 @@ btn.addEventListener('click', () => {
 btntext.addEventListener('animationend', () => {
   btntext.classList.remove('popup-message');
   btntext.classList.add('hidden');
+  console.log(btntext);
 });
+
