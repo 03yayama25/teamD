@@ -44,6 +44,13 @@
 	<h1>新規登録</h1>
 	<p>お名前</p>
 	<input type="text" id="name" name="name" required>
+		
+	<!-- 名前の重複エラーメッセージ表示領域 -->
+    <% String errorMessage = (String) request.getAttribute("errorMessage"); %>
+    <% if (errorMessage != null) { %>
+        <p style="color: red;"><%= errorMessage %></p>
+    <% } %>
+    
 	<p>パスワード</p>
 	<input type="password" name="pass" id="pass"  autocomplete="off" minlength="4" required>
 	<p>パスワード確認</p>

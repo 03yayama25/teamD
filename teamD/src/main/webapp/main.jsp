@@ -9,9 +9,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="js/randomImage.js"></script>
-<script src="js/resizeImages.js"></script>
-<script src="js/popupImage.js"></script>
 <script src="js/calenderImage.js"></script>
+<script src="js/btn.js"></script>
 <title>服薬管理アプリ</title>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/main.css">
 </head>
@@ -20,21 +19,41 @@
  <div class="bg_pattern Lines_v2"></div>
 
 
-<div class="main"></div>
+<div class="contents">
     <h1>ようこそ、 <%= session.getAttribute("name") %>さん！</h1>
     <a href="medicine-register.jsp">服薬登録</a><br>
     
     	<img id="randomImage" src="" alt="Random Image">
+
  	<div class="split">
     <div class="split-item left">
         <div class="left__inner">
-	
+
+    	<!-- <div id="btntext">うまくやっています。最高です</div> -->
+    	<!-- 上記調整必要あり -->
+
     <h2>朝</h2>
-    <ul>
-        <c:forEach var="medicine" items="${morningMedicines}">
-            <li>${medicine.name}</li>
-        </c:forEach>
-    </ul>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>名前</th>
+                <th>種類</th>
+                <!-- 他の必要なカラムがあればここに追加 -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 薬のリストをループして表示 -->
+            <c:forEach items="${medicines}" var="medicine">
+                <tr>
+                    <td>${medicine.id}</td>
+                    <td>${medicine.name}</td>
+                    <td>${medicine.type}</td>
+                    <!-- 他のカラムについても同様に表示 -->
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
     
 	<button onclick="displayRandomImage()" id="achievedButton" class="button">服用</button>
 	
@@ -86,8 +105,9 @@
         <button id="prev" onclick="prev()">‹</button>
         <button id="next" onclick="next()">›</button>
     </div>
+	
+	</div>
 
-    <!-- カレンダー -->
     <div id="calendar"></div>
     </div>
 	</div><!--right__inner-->

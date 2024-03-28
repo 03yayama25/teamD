@@ -13,6 +13,11 @@ function displayRandomImage() {
                     resizeImage(); // 画像をリサイズ
                     centerImage(); // 画像を中央寄せ
                     randomImage.style.display = 'block'; // 画像を表示
+                    
+                    // メッセージを表示
+                    var btntext = document.getElementById('btntext');
+                    btntext.classList.remove('hidden');
+                    btntext.classList.add('popup-message');
                 };
             } else {
                 console.error('Failed to fetch random image path');
