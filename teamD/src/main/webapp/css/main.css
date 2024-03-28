@@ -23,6 +23,24 @@ body {
 }
 
 
+.completion {
+  background-color: rgb(255, 255, 255);
+  padding: 60px;
+  border-radius: 8px;
+  box-shadow:  0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  height:400px;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+
 .contents{
 	background-color: #ffffff;
     padding: 60px;
