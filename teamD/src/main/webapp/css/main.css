@@ -174,7 +174,6 @@ button:hover {
 }
 .left__inner{
     height: 100%;
-    position: fixed;
     width: 40%;
 }
 .right__inner{

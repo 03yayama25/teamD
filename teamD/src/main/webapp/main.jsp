@@ -21,77 +21,79 @@
 
 
 <div class="main"></div>
-	<h1>服薬管理アプリ</h1>
-    <h4>ようこそ、 <%= session.getAttribute("name") %>さん！</h4>
-    <a href="medicine-register.jsp">服薬登録</a><br>
+
+<h1>服薬管理アプリ</h1>
+<h4>ようこそ、 <%= session.getAttribute("name") %>さん！</h4>
+<a href="medicine-register.jsp">服薬登録</a><br>
     
-    	<img id="randomImage" src="" alt="Random Image">
- 	<div class="split">
+<img id="randomImage" src="" alt="Random Image">
+
+<div class="split">
     <div class="split-item left">
-        <div class="left__inner">
+    	<div class="left__inner">
 	
-    <h2>朝</h2>
-    <ul>
-        <c:forEach var="medicine" items="${morningMedicines}">
-            <li>${medicine.name}</li>
-        </c:forEach>
-    </ul>
-    
-	<button onclick="displayRandomImage()" id="achievedButton" class="button">服用</button>
-	
-	
-
-    <h2>昼</h2>
-    <ul>
-        <c:forEach var="medicine" items="${afternoonMedicines}">
-            <li>${medicine.name}</li>
-        </c:forEach>
-    </ul>
-    
-	<button onclick="displayRandomImage()" id="achievedButton" class="button">服用</button>
-	
-	
-
-    <h2>夕</h2>
-    <ul>
-        <c:forEach var="medicine" items="${eveningMedicines}">
-            <li>${medicine.name}</li>
-        </c:forEach>
-    </ul>
-    
-	<button onclick="" id="achievedButton" class="button">服用</button>
-
-	
-    <h2>とん服</h2>
-	<ul>
-        <c:forEach var="medicine" items="${eveningMedicines}">
-            <li>${medicine.name}</li>
-        </c:forEach>
-    </ul>
-    
-	<button onclick="displayRandomImage()" id="achievedButton" class="button">服用</button>
-	
-	<br>
-	<a href="index.jsp">もどる</a>
+		    <h2>朝</h2>
+		    <ul>
+		        <c:forEach var="medicine" items="${morningMedicines}">
+		            <li>${medicine.name}</li>
+		        </c:forEach>
+		    </ul>
+		    
+			<button onclick="displayRandomImage()" id="achievedButton" class="button">服用</button>
+			
+			
+		
+		    <h2>昼</h2>
+		    <ul>
+		        <c:forEach var="medicine" items="${afternoonMedicines}">
+		            <li>${medicine.name}</li>
+		        </c:forEach>
+		    </ul>
+		    
+			<button onclick="displayRandomImage()" id="achievedButton" class="button">服用</button>
+			
+			
+		
+		    <h2>夕</h2>
+		    <ul>
+		        <c:forEach var="medicine" items="${eveningMedicines}">
+		            <li>${medicine.name}</li>
+		        </c:forEach>
+		    </ul>
+		    
+			<button onclick="" id="achievedButton" class="button">服用</button>
+		
+			
+		    <h2>とん服</h2>
+			<ul>
+		        <c:forEach var="medicine" items="${eveningMedicines}">
+		            <li>${medicine.name}</li>
+		        </c:forEach>
+		    </ul>
+		    
+			<button onclick="displayRandomImage()" id="achievedButton" class="button">服用</button>
+			
+			<br>
+			<a href="index.jsp">もどる</a>
 	    </div><!--left__inner-->
     </div><!--split-item left-->
 	
 	<div class="split-item right">
         <div class="right__inner">
-	<div class="wrapper">
-    <!-- xxxx年xx月を表示 -->
-    <h3 id="header"></h3>
+			<div class="wrapper">
+		    <!-- xxxx年xx月を表示 -->
+		    <h3 id="header"></h3>
 
-    <!-- ボタンクリックで月移動 -->
-    <div id="next-prev-button">
-        <button id="prev" onclick="prev()">‹</button>
-        <button id="next" onclick="next()">›</button>
-    </div>
+			    <!-- ボタンクリックで月移動 -->
+			    <div id="next-prev-button">
+			        <button id="prev" onclick="prev()">‹</button>
+			        <button id="next" onclick="next()">›</button>
+			    </div>
 
-    <!-- カレンダー -->
-    <div id="calendar"></div>
-    </div>
-	</div><!--right__inner-->
+			    <!-- カレンダー -->
+			    <div id="calendar"></div>
+    		</div>
+		</div><!--right__inner-->
     </div><!--split-item right-->
 </div><!--split-->
 	
