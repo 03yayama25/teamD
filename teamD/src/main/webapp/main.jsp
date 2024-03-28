@@ -27,7 +27,8 @@
 
     
     <h2>朝</h2>
-    <table border="1">
+     
+<%--     <table border="1">
         <thead>
             <tr>
                 <th>ID</th>
@@ -48,7 +49,8 @@
             </c:forEach>
         </tbody>
     </table>
-    
+     --%>
+     
 	<button onclick="displayRandomImage()" id="achievedButton" class="button">服用</button>
 	
 	
