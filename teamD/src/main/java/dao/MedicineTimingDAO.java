@@ -8,8 +8,9 @@ import java.util.List;
 import model.MedicineTiming;
 import utils.DBUtil;
 
-public class MedicineTimingDAO {
+public class MedicineTimingDAO { //薬のタイミング情報をデータベースに追加するメソッド
     public void addMedicineTimings(List<MedicineTiming> timingList) throws SQLException {
+    	//SQL文 medicines_timingテーブルへ
         String sql = "INSERT INTO medicines_management.medicines_timing (medicines_id, timing) VALUES (?, ?)";
         try (Connection conn = DBUtil.getConnection();
              PreparedStatement statement = conn.prepareStatement(sql)) {
