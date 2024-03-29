@@ -20,8 +20,7 @@
 <div id="contents">
 	<header>
 		<h1>服薬管理アプリ</h1>
-		<h4>ようこそ、 <%= session.getAttribute("name") %>さん！</h4>
-		<a href="medicine-register.jsp">服薬登録</a>
+		<h4>おかえり、 <%= session.getAttribute("name") %>さん。</h4>
 	</header>
 	
 	<div id="container">
@@ -52,7 +51,7 @@
 		
 		
 		
-			<h2>夕</h2>
+			<h2>晩</h2>
 				<ul>
 					<c:forEach var="medicine" items="${eveningMedicines}">
 						<li>${medicine.name}</li>
@@ -76,9 +75,12 @@
 		</div>
 		
 		<div id="right">
-			<img id="randomImage" src="" alt="Random Image">	
+			<h2>おくすり登録はこちら</h2><br>
+			<button onclick="location.href='medicine-register.jsp'" id="achievedButton" class="button">おくすり登録</button>
+			
+			<p><img id="randomImage" src="" alt="Random Image"></p>
 			<!-- xxxx年xx月を表示 -->
-			<h3 id="header"></h3>
+			<h2 id="header"></h2>
 			
 			 <!-- ボタンクリックで月移動 -->
 			<div id="next-prev-button">
