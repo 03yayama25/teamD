@@ -22,16 +22,20 @@
     <input type="text" name="name" required><br>
 
     <h2>頻度</h2><br>
-    <input type="checkbox" id="morning" name="timing" value="朝">朝
-    <input type="checkbox" id="noon" name="timing" value="昼">昼
-    <input type="checkbox" id="evening" name="timing" value="夜">夜
-    <input type="checkbox" id="ond" name="timing" value="とん服">とん服<br><br>
+    <lavel><input type="checkbox" id="morning" name="timing" value="朝">朝</lavel>
+    <lavel><input type="checkbox" id="noon" name="timing" value="昼">昼</lavel>
+    <label><input type="checkbox" id="evening" name="timing" value="晩">晩</label>
+    <label><input type="checkbox" id="ond" name="timing" value="とん服">とん服</label>
+    <br><br>
 
     <h2>種類</h2><br>
-    <input type="radio" id="prescription" name="type" value="処方箋" required>処方箋
-    <input type="radio" id="overTheCounter" name="type" value="市販薬" required>市販薬<br><br>
+    <lavel><input type="radio" id="prescription" name="type" value="処方箋" required>処方箋</label>
+    <lavel><input type="radio" id="overTheCounter" name="type" value="市販薬" required>市販薬</label>
+    <br><br>
 
     <input type="submit" value="登録">
+    <br>
+	<a href="main.jsp">もどる</a>
 </form>
 
 </body>

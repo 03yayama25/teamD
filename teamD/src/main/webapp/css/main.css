@@ -19,7 +19,41 @@ html, body {
 
 body {
 	color: #0B1013;
-	background-color: #E0E0E0;
+}
+
+a {
+  color: #0B1013;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+header{
+	padding: 10px;
+}
+#contents{
+	background-color: rgb(255, 255, 255);
+	width: 90%;
+	height: auto;
+	border-radius: 8px;
+	margin: auto;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#left {
+    width: 50%;
+}
+
+#right {
+    width: 50%;
 }
 
 
@@ -57,12 +91,26 @@ h1 {
 	padding: 0.5em;/*文字周りの余白*/
 	color: white;/*文字を白に*/
 	border-radius: 0.5em;/*角の丸み*/
+	margin: 15px;
 }
 
-h2, p {
+p {
 	text-align: center;
 	font-size: 20px;
 	margin-top: 10px;
+}
+
+h2 {
+	font-size: 20px;
+	color: #505050;/*文字色*/
+	background: linear-gradient(transparent 70%, #dbebf8 70%);
+	width: 80%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+ul {
+    list-style: none;
 }
 
 /*背景*/
@@ -72,37 +120,19 @@ h2, p {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background-color: #B5CAA0;
+	background-color: #b5caa0;
 	opacity: 0.4;
 	z-index: -1;
 }
 
-
-.Lines_v2 {
-  background-image: linear-gradient(to right, #92a5f0, #92a5f0 10px,#ffffff 10px, #ffffff );
-  background-size: 20px 100%;
+ .Lines_v2 {
+	background-image: linear-gradient(to right, #92a5f0, #92a5f0 10px,#ffffff 10px, #ffffff );
+	background-size: 20px 100%;
 }
 
 #randomImage {
 	display: none; /* 初期状態で非表示にする */
 }
-
-/*２段組み*/
-.main {
-	display: flex;
-}
-
-.containerA {
-	margin: 20px 20px 0 20px;
-	width: 800px;
-	float: right;
-}
-
-.containerB {
-	margin: 30px 30px 0px 30px;
-}
-
-
 
 .btn-container {
   text-align: center;
@@ -117,8 +147,8 @@ h2, p {
 	padding: .9em 2em;
 	border: none;
 	border-radius: 25px;
-	background-color: #2E5C6E;
-	color: #FBE251;
+	background-color: #7c92ed;
+	color: #FFFFFF;
 	font-weight: 600;
 	font-size: 1em;
 }
@@ -175,36 +205,11 @@ button:hover {
   }
 }
 
-
-
-/* 要素を横に並べる*/
-.split{
-    display: table;
-    width: 100%;    
-}
-.split-item{
-    display: table-cell;
-    padding: 80px;
-    width: 50%;
-}
-.left{
-    position: relative;
-}
-.left__inner{
-    height: 100%;
-    width: 40%;
-}
-.right__inner{
-    height: 380px;
-}
-
-
-
 /*カレンダー*/
 #calendar {
     text-align: center;
     width: 100%;
-     background-color: white;
+    background-color: white;
 }
 table {
     outline: 2px solid #ddd;

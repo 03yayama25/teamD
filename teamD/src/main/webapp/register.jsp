@@ -42,7 +42,7 @@
 
 <form action="AccountRegister" method="post">
 	<h1>新規登録</h1>
-	<p>お名前</p>
+	<h2>お名前</h2>
 	<input type="text" id="name" name="name" required>
 		
 	<!-- 名前の重複エラーメッセージ表示領域 -->
@@ -51,13 +51,14 @@
         <p style="color: red;"><%= errorMessage %></p>
     <% } %>
     
-	<p>パスワード</p>
+	<h2>パスワード</h2>
 	<input type="password" name="pass" id="pass"  autocomplete="off" minlength="4" required>
-	<p>パスワード確認</p>
+	<h2>パスワード確認</h2>
 	<input type="password" name="pass_confirmation" id="pass_confirmation" autocomplete="off" minlength="4" required onkeyup="checkPasswordMatch()">
 	<p id="confirmMessage"></p>
 	<p><input type="submit" value="送信"></p>
-
+	<br>
+	<a href="index.jsp">もどる</a>
 </form>
 
 </body>
