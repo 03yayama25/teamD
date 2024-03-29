@@ -14,9 +14,9 @@
 <!-- ログインフォーム -->
 <form action="Login" method="post">
 	<h1>服薬管理アプリ</h1><br>
-	おなまえ<br>
+	<h2>おなまえ</h2>
 	<input type="text" name="name"><br>
-	パスワード<br>
+	<h2>パスワード</h2>
 	<input type="password" name="pass"><br>
 	<input type="submit" value="ログイン"><br>
 
